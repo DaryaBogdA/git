@@ -82,3 +82,5 @@ def exercise10_10_3():
     print(new_matrix)
 
 # exercise10_10_3()
+
+# лыаожфдл
