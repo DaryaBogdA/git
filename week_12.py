@@ -55,11 +55,7 @@ class Queue_with_priority:
 
     def dequeue(self):
         if not self.is_empty():
-            def get_priority(element):
-                return element[0]
-            highest_priority_item = min(self.items, key=get_priority)
-            self.items.remove(highest_priority_item)
-            return highest_priority_item
+            return self.items.pop(0)
         return None
 
     def size(self):
@@ -80,16 +76,29 @@ stack = Stack()
 stack.push(1)
 stack.push(2)
 stack.push(3)
+stack.push(4)
+stack.push(5)
+stack.push(6)
+
+stack.print_stack()
+print("Popped:", stack.pop())
+print("Popped:", stack.pop())
+stack.push(7)
+stack.push(8)
 stack.print_stack()
 print("Popped:", stack.pop())
 stack.print_stack()
-print("Size:", stack.size())
+# stack.print_stack()
+# print("Size:", stack.size())
 
 queue = Queue()
 queue.enqueue("A")
 queue.enqueue("B")
 queue.enqueue("C")
 queue.print_queue()
+print("Dequeued:", queue.dequeue())
+print("Dequeued:", queue.dequeue())
+print("Dequeued:", queue.dequeue())
 print("Dequeued:", queue.dequeue())
 queue.print_queue()
 print("Size:", queue.size())
